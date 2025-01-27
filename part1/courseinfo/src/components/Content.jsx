@@ -1,7 +1,14 @@
 import Part from "./Part"
 
 
-function Content({ part1, exercises1, part2, exercises2, part3, exercises3 }) {
+function Content({ parts }) {
+    const part1 = parts[0].name
+    const exercises1 = parts[0].exercises
+    const part2 = parts[1].name
+    const exercises2 = parts[1].exercises
+    const part3 = parts[2].name
+    const exercises3 = parts[2].exercises
+    
     return (
         <div>
             <Part part={part1} exercises={exercises1} />

@@ -1,7 +1,8 @@
 
-function Header({course}) {
+function Header(props) {
+    console.log(props)
     return (
-        <h1>{course}</h1>
+        <h1>{props.course}</h1>
     )
 }
 
