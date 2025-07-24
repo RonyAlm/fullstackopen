@@ -60,7 +60,7 @@ const App = () => {
             }, 5000)
           })
           .catch(error => {
-            setMessage({ text: `Information of ${newName} has already been removed from server `, type: 'error' })
+            setMessage({ text: error.response.data.error, type: 'error' })
             setTimeout(() => {
               setMessage({ text: '', type: '' })
             }, 5000)
@@ -84,6 +84,12 @@ const App = () => {
             setMessage({ text: '', type: '' })
           }, 5000)
 
+        })
+        .catch(error => {
+          setMessage({ text: error.response.data.error, type: 'error' })
+          setTimeout(() => {
+            setMessage({ text: '', type: '' })
+          }, 5000)
         })
 
     }
