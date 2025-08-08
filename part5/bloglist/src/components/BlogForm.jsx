@@ -20,10 +20,11 @@ const BlogForm = ({ createBlog }) => {
 
   return (
     <Togglable buttonLabel="new blog" ref={blogFormRef}>
-      <form onSubmit={addBlog}>
+      <form onSubmit={addBlog} aria-label='Form to add a new blog'>
         <h3>Add a new blog</h3>
         <div>
           <input type="text"
+            role='textbox'
             placeholder="title"
             name="title"
             value={newBlog.title}
@@ -31,6 +32,7 @@ const BlogForm = ({ createBlog }) => {
         </div>
         <div>
           <input type="text"
+            role='textbox'
             placeholder="author"
             name="author"
             value={newBlog.author}
@@ -38,6 +40,7 @@ const BlogForm = ({ createBlog }) => {
         </div>
         <div>
           <input type="text"
+            role='textbox'
             placeholder="url"
             name="url"
             value={newBlog.url}

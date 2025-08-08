@@ -35,25 +35,25 @@ const Blog = ({ blog, user, updateBlog, removeBlog }) => {
   }
 
   return (
-    <div style={blogStyle}>
+    <section style={blogStyle}>
       <div style={headerStyle}>
         <p>{title}</p>
         <small>{author}</small>
         <button onClick={toogleVisibility}>{visible ? 'hide' : 'view'}</button>
       </div>
-      <div style={{ display: visible ? '' : 'none' }}>
+      <div className="details" style={{ display: visible ? '' : 'none' }}>
         <a href={url}>{url}</a>
-        <div>
-          <p>Likes: {likes}</p>
-          <button onClick={increaseLikes}>Like</button>
-        </div>
+
+        <p>Likes: {likes}</p>
+        <button onClick={increaseLikes}>Like</button>
+
         <p>{blogUser.username}</p>
         {
-          user && user.username === blogUser.username &&
+          user && user.name === blogUser.name &&
           <button onClick={handleRemove}>remove</button>
         }
       </div>
-    </div>
+    </section>
   )
 }
 export default Blog
